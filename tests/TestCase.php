@@ -1,24 +1,19 @@
 <?php
 
-namespace Laravel\Aws\Tests;
+namespace Tests;
 
-use Laravel\Aws\AwsServiceProvider;
+use Laravel\Logzio\ServiceProvider;
 use Orchestra\Testbench\TestCase as Testbench;
 
+/**
+ * Class TestCase
+ *
+ * @package     oanhnn/laravel-aws
+ * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
+ * @license     The MIT license
+ */
 class TestCase extends Testbench
 {
-    /**
-     * Setup the test environment.
-     *
-     * @throws \Exception
-     */
-    public function setUp()
-    {
-        parent::setUp();
-
-        //
-    }
-
     /**
      * Define environment setup.
      *
@@ -27,11 +22,11 @@ class TestCase extends Testbench
      */
     protected function getEnvironmentSetUp($app)
     {
-        //
+        // Define your environment setup.
     }
 
     /**
-     * Get Laraplans package service provider.
+     * Get loading package service provider.
      *
      * @param  \Illuminate\Foundation\Application $app
      * @return array
@@ -39,7 +34,7 @@ class TestCase extends Testbench
     public function getPackageProviders($app)
     {
         return [
-            AwsServiceProvider::class,
+            ServiceProvider::class,
         ];
     }
 }
